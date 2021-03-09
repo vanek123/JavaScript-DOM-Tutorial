@@ -1,8 +1,9 @@
-const bookList = document.querySelector('#book-list');
+const list = document.querySelector('#book-list ul');
 
-console.log('#book-list next sibling:', bookList.nextSibling);
-console.log('#book-list next element sibling:', bookList.nextElementSibling);
-console.log('#book-list previous sibling:', bookList.previousSibling);
-console.log('#book-list previous element sibling:', bookList.previousElementSibling);
-
-bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for everyone else!';
+// delete books
+list.addEventListener('click', (e) => {
+  if(e.target.className == 'delete'){
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li);
+  }
+});
